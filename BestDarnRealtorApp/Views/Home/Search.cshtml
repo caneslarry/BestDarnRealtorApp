@@ -1,0 +1,140 @@
+﻿@model SearchForm
+
+@{
+    ViewData["Title"] = "Search Listings";
+}
+<div class="text-center">
+    <h1 class="display-4">Search Listings</h1>
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group col-md-3">
+                    <label for="mls class="control-label">Mls#</label>
+                    <input name="mls" class="form-control" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="city class="control-label">City</label>
+                    <input name="city" class="form-control" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="state class="control-label">State</label>
+                    <input name="state" class="form-control" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="zip class="control-label">Zip</label>
+                    <input name="zip" class="form-control" />
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group col-md-3">
+                    <label for="bedrooms_min" class="control-label range-label">Beds</label>
+                    <input asp-for="bedrooms_min" class="form-control form-range" />
+                    <span asp-validation-for="bedrooms_min" class="text-danger"></span>
+
+                    <span class="to">to</span><input asp-for="bedrooms_max" class="form-control form-range" />
+                    <span asp-validation-for="bedrooms_max" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="bathrooms_min" class="control-label range-label">Baths</label>
+
+                    <input asp-for="bathrooms_min" class="form-control form-range" />
+                    <span asp-validation-for="bathrooms_min" class="text-danger"></span>
+
+                    <span class="to">to</span><input asp-for="bathrooms_max" class="form-control form-range" />
+                    <span asp-validation-for="bathrooms_max" class="text-danger"></span>
+
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="squarefeet_min" class="control-label range-label">SqFt</label>
+                    <input asp-for="squarefeet_min" class="form-control form-range" />
+                    <span asp-validation-for="squarefeet_min" class="text-danger"></span>
+                    <span class="to">to</span><input asp-for="squarefeet_max" class="form-control form-range" />
+                    <span asp-validation-for="squarefeet_max" class="text-danger"></span>
+
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="submit" name="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Listings != null)
+    {
+        <div class="container">
+            @foreach (var item in Model.Listings)
+            {
+                var dateStr = item.DateListed.ToString("MM/dd/yyyy");
+                var priceStr = item.SalesPrice.ToString("$##,#");
+                var sqft = item.SquareFeet.ToString("##,#");
+                var lotsize = item.LotSize.ToString("##,#");
+            <div class="container listing">
+                <div class="row">
+                        <div class="col-md-12 bg-light listing-container">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="@item.Image1" class="list-thumb img-thumbnail" />
+                                </div>
+                                <div class="col-md-2 address">
+                                    <span class="header">Address</span><br />
+                                    @Html.DisplayFor(modelItem => item.Street1)<br />
+                                    @if (item.Street2 == "") {
+                                        @Html.DisplayFor(modelItem => item.Street2)<br />
+                                    }
+                                    @Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State) @Html.DisplayFor(modelItem => item.Zip)<br />
+                                    @Html.DisplayFor(modelItem => item.Neighborhood)
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            MLS: @Html.DisplayFor(modelItem => item.Mls)
+                                        </div>
+                                        <div class="col-md-4">
+                                            Price: @priceStr
+                                        </div>
+                                        <div class="col-md-4">
+                                            Listed: @dateStr
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Bedrooms: @Html.DisplayFor(modelItem => item.Bedrooms)
+                                        </div>
+                                        <div class="col-md-4">
+                                            Bathrooms: @Html.DisplayFor(modelItem => item.Bathrooms)
+                                        </div>
+                                        <div class="col-md-4">
+                                            Garage Size: @Html.DisplayFor(modelItem => item.GarageSize)
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Square Feet: @sqft
+                                        </div>
+                                        <div class="col-md-4">
+                                            Lot Size: @lotsize
+                                        </div>
+                                        <div class="col-md-4">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="container description">
+                                        Details: @Html.DisplayFor(modelItem => item.Description)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            }
+        </div>
+    }
+</div>
