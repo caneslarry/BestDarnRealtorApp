@@ -1,0 +1,142 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b0948;
+    border-color: #1b0948;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: Karla;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+.navbar {
+    background: transparent linear-gradient(180deg, #1b0a49 0%, #1b0948 100%) 0% 0% no-repeat padding-box;
+    color: #ffffff!important;
+}
+.navbar a{
+    color: #ffffff !important;
+}
+    .navbar a:hover {
+        color: #d77e2b !important;
+    }
+
+.text-white {
+    color: #ffffff;
+}
+
+footer {
+    color: #ffffff !important;
+    background: url(https://www.effectual.com/wp-content/uploads/2020/09/triangle-overlay-1.png) center top repeat-x, linear-gradient(#45338e, #110038) left top no-repeat;
+}
+
+.list-thumb{
+    width: 150px;
+}
+
+.listing {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 0 0 2px #ccc; /* Firefox 3.5 - 3.6 */
+    box-shadow: 0 0 2px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.form-range{
+    width:57px;
+    float:left;
+}
+
+.range-label{
+    float:left;
+    margin:5px;
+}
+.to{
+    margin:5px;
+    display:block;
+    float:left;
+}
+
+.address{
+    font-size: 12px;
+}
+
+.address-meta{
+    font-size:10px;
+}
+
+.description {
+    font-size: 12px;
+    margin: 5px;
+    text-align:left;
+}
+.listing-container {
+    border-radius: 5px;
+    padding:7px;
+}
+.form-group {
+    float: left;
+}
