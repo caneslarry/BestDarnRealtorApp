@@ -87,7 +87,7 @@
                                     @Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State) @Html.DisplayFor(modelItem => item.Zip)<br />
                                     @Html.DisplayFor(modelItem => item.Neighborhood)
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-8 listing-details">
                                     <div class="row">
                                         <div class="col-md-4">
                                             MLS: @Html.DisplayFor(modelItem => item.Mls)
@@ -121,16 +121,14 @@
 
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="container description">
-                                        Details: @Html.DisplayFor(modelItem => item.Description)
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Details: @Html.DisplayFor(modelItem => item.Description)
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
+
                         </div>
                 </div>
             </div>
