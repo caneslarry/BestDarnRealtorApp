@@ -9,19 +9,19 @@
     {
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <label for="mls class="control-label">Mls#</label>
                     <input name="mls" class="form-control" />
-                </div>
-                <div class="form-group col-md-3">
+                </div> 
+                <div class="form-group col-md-3 search-field">
                     <label for="city class="control-label">City</label>
                     <input name="city" class="form-control" />
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <label for="state class="control-label">State</label>
                     <input name="state" class="form-control" />
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <label for="zip class="control-label">Zip</label>
                     <input name="zip" class="form-control" />
                 </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <label for="bedrooms_min" class="control-label range-label">Beds</label>
                     <input asp-for="bedrooms_min" class="form-control form-range" />
                     <span asp-validation-for="bedrooms_min" class="text-danger"></span>
@@ -38,7 +38,7 @@
                     <span class="to">to</span><input asp-for="bedrooms_max" class="form-control form-range" />
                     <span asp-validation-for="bedrooms_max" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <label for="bathrooms_min" class="control-label range-label">Baths</label>
 
                     <input asp-for="bathrooms_min" class="form-control form-range" />
@@ -48,7 +48,7 @@
                     <span asp-validation-for="bathrooms_max" class="text-danger"></span>
 
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <label for="squarefeet_min" class="control-label range-label">SqFt</label>
                     <input asp-for="squarefeet_min" class="form-control form-range" />
                     <span asp-validation-for="squarefeet_min" class="text-danger"></span>
@@ -56,7 +56,7 @@
                     <span asp-validation-for="squarefeet_max" class="text-danger"></span>
 
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 search-field">
                     <input type="submit" name="submit" value="Search" class="btn btn-primary" />
                 </div>
             </div>

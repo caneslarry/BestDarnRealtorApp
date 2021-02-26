@@ -43,8 +43,6 @@ namespace BestDarnRealtorApp.Controllers
 
             await query.ToListAsync();
 
-         
-            //var model = new SearchForm();
             model.Listings = query;
 
             return View(model);

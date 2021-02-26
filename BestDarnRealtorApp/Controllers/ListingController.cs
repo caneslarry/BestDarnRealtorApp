@@ -53,11 +53,9 @@ namespace BestDarnRealtorApp.Controllers
         }
 
         // POST: Listing/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Mls,Street1,Street2,City,State,Zip,Neighborhood,SalesPrice,DateListed,Bedrooms,Bathrooms,GarageSize,SquareFeet,LotSize,Description,Image1,Image2,Image3,Image4")] Listing listing)
+        public async Task<IActionResult> Create(Listing listing)
         {
             if (ModelState.IsValid)
             {
@@ -85,11 +83,9 @@ namespace BestDarnRealtorApp.Controllers
         }
 
         // POST: Listing/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Mls,Street1,Street2,City,State,Zip,Neighborhood,SalesPrice,DateListed,Bedrooms,Bathrooms,GarageSize,SquareFeet,LotSize,Description,Image1,Image2,Image3,Image4")] Listing listing)
+        public async Task<IActionResult> Edit(int id, Listing listing)
         {
             if (id != listing.Id)
             {
